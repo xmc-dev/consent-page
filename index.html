@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Authorize {{.ClientName}}</title>
+	</head>
+
+	<body>
+		<h2>Authorize {{.ClientName}}</h2>
+
+		<h3>{{.ClientName}} by {{.OwnerClientID}}</h3>
+		<h4>wants to access your <strong>{{.SubjectClientID}}</strong> account</h3>
+
+		{{range .Scopes}}
+		<h3>{{.Title}}</h3>
+		<h4>{{.Synopsis}}</h3>
+		{{end}}
+
+		<form method="post" action="/consent">
+			<input type="text" name="redirect_uri" style="display: none;" value="{{.RedirectURI}}" />
+			<input type="submit" value="Authorize {{.SubjectClientID}}" />
+		</form>
+	</body>
+</html>
