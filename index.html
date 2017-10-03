@@ -15,9 +15,14 @@
 		<h4>{{.Synopsis}}</h3>
 		{{end}}
 
-		<form method="post" action="/consent">
-			<input type="text" name="redirect_uri" style="display: none;" value="{{.RedirectURI}}" />
-			<input type="submit" value="Authorize {{.SubjectClientID}}" />
+		<form method="post" action="/authorize">
+			<div style="display: none;">
+				<input type="text" name="client_id" value="{{.ClientID}}" />
+				<input type="text" name="redirect_uri" value="{{.RedirectURI}}" />
+				<input type="text" name="state" value="{{.State}}" />
+				<input type="text" name="scope" value="{{.Scope}}" />
+			</div>
+			<button name="authorize" value="1" type="submit">Authorize {{.SubjectClientID}}</button>
 		</form>
 	</body>
 </html>
