@@ -15,8 +15,9 @@
 		<h4>{{.Synopsis}}</h3>
 		{{end}}
 
-		<form method="post" action="/authorize">
+		<form method="get" action="/authorize">
 			<div style="display: none;">
+				<input type="text" name="response_type" value="{{.ResponseType}}" />
 				<input type="text" name="client_id" value="{{.ClientID}}" />
 				<input type="text" name="redirect_uri" value="{{.RedirectURI}}" />
 				<input type="text" name="state" value="{{.State}}" />
