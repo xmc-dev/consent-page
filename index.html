@@ -25,5 +25,10 @@
 			</div>
 			<button name="authorize" value="1" type="submit">Authorize {{.SubjectClientID}}</button>
 		</form>
+
+		<p>
+			Authorizing will redirect to <br />
+			<strong>{{.RedirectURI}}</strong>
+		</p>
 	</body>
 </html>
