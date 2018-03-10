@@ -22,6 +22,8 @@
 				<input type="text" name="redirect_uri" value="{{.RedirectURI}}" />
 				<input type="text" name="state" value="{{.State}}" />
 				<input type="text" name="scope" value="{{.Scope}}" />
+				<input type="text" name="code_challenge" value="{{.CodeChallenge}}" />
+				<input type="text" name="code_challenge_method" value="{{.CodeChallengeMethod}}" />
 			</div>
 			<button name="authorize" value="1" type="submit">Authorize {{.SubjectClientID}}</button>
 		</form>
